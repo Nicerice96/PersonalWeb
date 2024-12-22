@@ -1,16 +1,11 @@
 function Header(){
 
     return(
-        <header>
-            <h1>LLaVA-OneVision</h1>
-            <ul>
-                <li>Try it!</li>
-                <li>Contact Development Team</li>
-                <li>About us</li>
-            </ul>
-
+        <header className = "header">
+            <h1 className = "title">Zarif Khan</h1>
+            <div className="divider"></div>
         </header>
-
+        
     );
 
 

@@ -1,68 +1,106 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* General header styles */
 body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  padding-bottom: 60px; /* Prevent footer overlap */
+}
+
+.header {
+  width: 100%;
+  background-color: #000000;
+  padding: 10px 20px;
+}
+
+/* Title styles */
+.title {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Header navigation link styles */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+  position: relative;
+}
+
+/* Divider between header and subheader */
+.divider {
+  height: 4px;
+  background-color: #6dd9fd;
+  margin: 0;
+  width: 100%;
+}
+
+/* Subheader styles */
+.subheader {
+  width: 100%;
+  background-color: #000000;
+  padding: 10px 20px;
+  position: sticky;
+  top: 50px; /* Adjust for fixed header height */
+  
+}
+
+/* Subheader navigation list styles */
+.subheader-nav {
+  list-style: none;
+  padding: 0;
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.subheader-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  position: relative;
+  padding: 5px 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Create the animated underline using ::after */
+.subheader-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #8ecade; /* Light blue underline */
+  transition: width 0.3s ease; /* Smooth transition */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Underline animation on hover */
+.subheader-link:hover::after {
+  width: 100%; /* Expand the underline */
+}
+/* Footer styles */
+.footer {
+  width: 100%;
+  background-color: #000;
+  padding: 20px 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Footer text styles */
+.footer-text {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
 }
