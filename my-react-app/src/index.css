@@ -4,12 +4,19 @@ body {
   margin: 0;
   font-family: 'Fira Code', monospace;
   padding-bottom: 60px; /* Prevent footer overlap */
+  width: 100%; /* Ensure body width is fixed */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .header {
   width: 100%;
   background-color: #000000;
   padding: 10px 20px;
+  top: 0px; /* Adjust for fixed header height */
+  z-index: 10; /* Ensure the subheader stays above other content */
+  border-bottom: 4px solid #8ecade;
+  position: sticky;
+  
 }
 
 /* Title styles */
@@ -31,13 +38,7 @@ body {
   position: relative;
 }
 
-/* Divider between header and subheader */
-.divider {
-  height: 4px;
-  background-color: #6dd9fd;
-  margin: 0;
-  width: 100%;
-}
+
 
 /* Subheader styles */
 .subheader {
@@ -46,7 +47,7 @@ body {
   padding: 10px 20px;
   position: sticky;
   top: 50px; /* Adjust for fixed header height */
-  
+  z-index: 10; /* Ensure the subheader stays above other content */
 }
 
 /* Subheader navigation list styles */
@@ -58,6 +59,8 @@ body {
   gap: 20px;
   align-items: center;
   justify-content: center;
+  top: 50px; /* Adjust for fixed header height */
+  z-index: 10; /* Ensure the subheader stays above other content */
 }
 
 .subheader-link {
@@ -85,11 +88,11 @@ body {
 .subheader-link:hover::after {
   width: 100%; /* Expand the underline */
 }
+
 /* Footer styles */
 .footer {
   width: 100%;
   background-color: #000;
-  padding: 20px 10px;
   text-align: center;
   position: fixed;
   bottom: 0;
