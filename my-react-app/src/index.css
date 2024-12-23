@@ -16,7 +16,6 @@ body {
   z-index: 10; /* Ensure the subheader stays above other content */
   border-bottom: 4px solid #8ecade;
   position: sticky;
-  
 }
 
 /* Title styles */
@@ -27,19 +26,10 @@ body {
   margin: 0;
 }
 
-/* Header navigation link styles */
-.nav-link {
-  color: white;
+.subheader a{
   text-decoration: none;
-  font-size: 1.1em;
-  font-weight: bold;
-  transition: color 0.3s ease;
-  padding: 5px 0;
-  position: relative;
+  color: #fff;
 }
-
-
-
 /* Subheader styles */
 .subheader {
   width: 100%;
@@ -61,6 +51,7 @@ body {
   justify-content: center;
   top: 50px; /* Adjust for fixed header height */
   z-index: 10; /* Ensure the subheader stays above other content */
+  text-decoration: none;
 }
 
 .subheader-link {
@@ -70,10 +61,12 @@ body {
   font-weight: bold;
   position: relative;
   padding: 5px 0;
+  text-decoration: none;
 }
 
 /* Create the animated underline using ::after */
 .subheader-link::after {
+  text-decoration: none;
   content: "";
   position: absolute;
   bottom: 0;
@@ -86,15 +79,129 @@ body {
 
 /* Underline animation on hover */
 .subheader-link:hover::after {
+  text-decoration: none;
   width: 100%; /* Expand the underline */
 }
 
+/* Ensure the container holds the image and intro-box in position */
+.body-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Changed from height: 100vh */
+  background-image: url('./assets/image.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex; /* Added */
+  flex-direction: column;
+  align-items: center;
+}
+
+#intro-box {
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* Added */
+  position: relative; /* Changed from absolute */
+  text-align: center;
+}
+
+#intro-text {
+  font-size: 20px;
+  padding: auto;
+}
+
+
+/* Styling for the timeline section */
+#evolution {
+  position: relative;
+  width: 80%;
+  margin: 50px auto; /* Added margin-top */
+  padding: 20px 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0); /* Optional: adds a slight background */
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #8ecade;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-content {
+  position: relative;
+  background-color: white;
+  border: 2px solid #8ecade;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.timeline-content p {
+  font-size: 1em;
+  color: #666;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: right;
+}
+
+/* Optional: Add dots to indicate the timeline's progress */
+.timeline-item:before {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #8ecade;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
 /* Footer styles */
 .footer {
   width: 100%;
   background-color: #000;
   text-align: center;
   position: fixed;
+  padding-bottom: 45px;
   bottom: 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
