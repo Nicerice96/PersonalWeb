@@ -9,8 +9,11 @@ const app = express();
 const port = 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
-// Store running processes and their PIDs
+
+
+
 const runningProcesses = new Map();
 
 app.use(cors({ origin: 'http://localhost:5173' }));
