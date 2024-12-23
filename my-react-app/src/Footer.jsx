@@ -1,10 +1,18 @@
+
+
 function Footer(){
 
 
     return (
         <footer className="footer">
-            <h1 id = "footerText">this is a footer</h1>
+            <ul>
+                <li><a href="./assets/resume.pdf" className="download-resume">Download Resume</a></li>
+                <li><p>Phone: 613-981-9377</p></li>
+                <li><p>Gmail: zarifzawadkhan96@gmail.com</p></li>
+                <li><p>Insta: nicerice96</p></li>
+            </ul>
         </footer>
+
 
     );
 

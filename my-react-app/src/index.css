@@ -1,12 +1,22 @@
-/* General header styles */
 body {
   padding: 0;
   margin: 0;
   font-family: 'Fira Code', monospace;
-  padding-bottom: 60px; /* Prevent footer overlap */
-  width: 100%; /* Ensure body width is fixed */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box; /* Add this */
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.header, .subheader {
+  width: 100%;
+  padding: 10px;  /* Reduce from 20px */
+  box-sizing: border-box;
+}
+
 
 .header {
   width: 100%;
@@ -86,16 +96,17 @@ body {
 /* Ensure the container holds the image and intro-box in position */
 .body-container {
   position: relative;
-  width: 100%;
-  min-height: 100vh; /* Changed from height: 100vh */
+  height: 100%; /* Ensure the container takes up full viewport height */
   background-image: url('./assets/image.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  display: flex; /* Added */
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Center content vertically */
 }
+
 
 #intro-box {
   width: 500px;
@@ -404,7 +415,7 @@ body {
   display: inline-block;
   padding: 10px 20px;
   background-color: #000000; /* Black background */
-  border: 3px solid #8ecade; /* Blue border */
+  border: 2px solid #8ecade; /* Blue border */
   color: white; /* White text */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Bold text */
@@ -475,74 +486,105 @@ body {
     font-size: 1.5em;
   }
 }
-/* Spotify Playlists section styling */
 .playlist-section {
   display: flex;
-  flex-direction: column; /* Ensure content stacks vertically */
-  align-items: left;
-  width: 80%;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
   margin: 50px auto;
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.9);
   border: 2px solid #8ecade;
   color: white;
   position: relative;
-  backdrop-filter: blur(5px);
-  font-family: 'Fira Code', monospace;
-}
-
-/* Corner accents matching project cards */
-.playlist-section::before,
-.playlist-section::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #8ecade;
-  transition: all 0.3s ease;
-}
-
-.playlist-section::before {
-  top: 15px;
-  left: 15px;
-  border-right: none;
-  border-bottom: none;
-}
-
-.playlist-section::after {
-  bottom: 15px;
-  right: 15px;
-  border-left: none;
-  border-top: none;
 }
 
 .playlist-section h2 {
   color: #8ecade;
   font-size: 1.8em;
   margin-bottom: 20px;
-  font-weight: bold;
+  font-family: 'Fira Code', monospace;
 }
 
 .playlist-container {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Space between playlists */
+  gap: 20px;
+  width: 100%;
 }
 
 .playlist-container iframe {
-  border-radius: 12px; /* Rounded corners */
-  border: 2px solid #8ecade; /* Blue border around each iframe */
+  width: 100%;
+  height: 152px;
+  border: none; /* Remove the border from individual iframes */
+  border-radius: 8px;
+  background-color: transparent;
 }
 
+/* Corner accent for the entire section */
+.playlist-section::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #8ecade;
+  border-left: 2px solid #8ecade;
+}
 
 /* Footer styles */
 .footer {
   width: 100%;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.9); /* Slight transparency for a sleek look */
+  color: white;
   text-align: center;
   position: fixed;
   bottom: 0;
+  padding: 20px 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  font-family: 'Fira Code', monospace;
+  border-top: 2px solid #8ecade; /* Blue border at the top */
 }
 
+/* Footer links and text styling */
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox to align items horizontally */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 40px; /* Space between items */
+}
+
+.footer li {
+  margin: 0; /* Remove margin to avoid unnecessary spacing */
+}
+
+.footer .download-resume {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  border: 3px solid #8ecade;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.footer .download-resume:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+/* Footer paragraph styling */
+.footer p {
+  font-size: 1.1em;
+  color: #8ecade;
+  margin: 0;
+}

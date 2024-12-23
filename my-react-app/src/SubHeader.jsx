@@ -6,7 +6,7 @@ return(
         <li className = "subheader-link"><a href="#evolution">Evolution of my skills</a></li>
         <li className = "subheader-link"><a href="#github-projects">Github Projects</a></li>
         <li className = "subheader-link"><a href="#capstone-section">Capstone</a></li>
-        <li className = "subheader-link"><a href="#spotify">Spotify</a></li>
+        <li className = "subheader-link"><a href="#spotify-playlists">Spotify</a></li>
         
     </ul>
 </div>
