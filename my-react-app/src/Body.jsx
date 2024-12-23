@@ -153,7 +153,7 @@ function Body() {
                 </div>
             </div>
 
-            <div className="capstone-section">
+            <div className="capstone-section" id="capstone-section">
                 <h2>Vision-Based Action Captioning and Classification for Neonatal Resuscitation</h2>
                 
                 <p className="collaboration">
@@ -165,11 +165,25 @@ function Body() {
                 </p>
 
                 <h2>Full Research Paper:</h2>
-                <div className="pdf-container">
-                    <iframe src={paperPdf} className="w-full h-full" 
-                    />
+                <div className="pdf-download">
+                    <a href={paperPdf} download="Capstone_Research_Paper.pdf" className="download-button">
+                        Download PDF
+                    </a>
                 </div>
             </div>
+
+            <div id="spotify-playlists" className="playlist-section">
+                <h2>My Spotify Playlists</h2>
+                <div className="playlist-container">
+                <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/5bMZT6DmB5wbmGNdFfJpbI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/4TbJDEiyiOT4ZFOSPc12Sa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/2LecmmGpWqRF5sbYLckisu?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+
+
 
         </div>
     );

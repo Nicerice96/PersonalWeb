@@ -399,24 +399,24 @@ body {
   position: relative;
   backdrop-filter: blur(5px);
   font-family: 'Fira Code', monospace;
-  min-height: 100vh; /* Ensure enough height */
 }
-.capstone-section .pdf-container {
-  display: flex;
-  justify-content: bottom;
-  align-items: bottom;
-  width: 100%;
-  height: 80vh; /* Adjust height as needed */
-  margin: 0 auto;
-  position: relative;
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000; /* Black background */
+  border: 3px solid #8ecade; /* Blue border */
+  color: white; /* White text */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
-.capstone-section iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  object-fit: contain;
+.download-button:hover {
+  background-color: #000000; /* Keep the black background on hover */
+  transform: translateY(-2px); /* Move up slightly on hover */
 }
+
 
 /* Corner accents matching project cards */
 .capstone-section::before,
@@ -475,6 +475,65 @@ body {
     font-size: 1.5em;
   }
 }
+/* Spotify Playlists section styling */
+.playlist-section {
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  align-items: left;
+  width: 80%;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #8ecade;
+  color: white;
+  position: relative;
+  backdrop-filter: blur(5px);
+  font-family: 'Fira Code', monospace;
+}
+
+/* Corner accents matching project cards */
+.playlist-section::before,
+.playlist-section::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8ecade;
+  transition: all 0.3s ease;
+}
+
+.playlist-section::before {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.playlist-section::after {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+}
+
+.playlist-section h2 {
+  color: #8ecade;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.playlist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between playlists */
+}
+
+.playlist-container iframe {
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #8ecade; /* Blue border around each iframe */
+}
+
 
 /* Footer styles */
 .footer {
