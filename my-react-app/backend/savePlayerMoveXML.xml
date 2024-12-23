@@ -1,0 +1,23 @@
+<root>
+	<Uno>
+	<Round>
+		<players>A</players>
+		<Hand> [0] Dark Color: Orange, Dark Type: SIX
+ [1] Dark Color: Purple, Dark Type: REVERSE
+ [2] Dark Color: Orange, Dark Type: SKIP_EVERYONE
+ [3] Dark Color: Orange, Dark Type: THREE
+ [4] Dark Color: Orange, Dark Type: REVERSE
+ [5] Dark Color: Pink, Dark Type: SKIP_EVERYONE
+</Hand>
+		<players>B</players>
+		<Hand> [0] Dark Color: Orange, Dark Type: REVERSE
+ [1] Dark Color: Pink, Dark Type: THREE
+ [2] Dark Color: Orange, Dark Type: ONE
+ [3] Dark Color: Pink, Dark Type: EIGHT
+</Hand>
+		<currentPlayer>B</currentPlayer>
+		<topOfDiscard>Dark Color: Teal, Dark Type: DARK_WILD_CARD</topOfDiscard>
+		<Deck>Dark Color: Orange, Dark Type: FIVE</Deck>
+	</Round>
+	</Uno>
+</root>
