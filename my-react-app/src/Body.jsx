@@ -40,8 +40,22 @@ function Body(){
                             </div>
                         </div>
                     </div>
+                  
                 </div>
+                <div id="Github Projects">
+                    <div id = "nicu">
 
+                    </div>
+                    <div id = "amazin.ca">
+                        
+                    </div>
+                    <div id = "uno">
+                    </div>
+                    <div id = "active-edge">
+
+                    </div>
+
+                </div>
             </div>
             
         </body>

@@ -99,101 +99,95 @@ body {
 
 #intro-box {
   width: 500px;
-  height: 500px;
+  height: auto; /* Changed from fixed height to auto */
+  min-height: 300px; /* Minimum height to maintain square look */
   background-color: black;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px; /* Added */
-  position: relative; /* Changed from absolute */
-  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  text-align: left; /* Changed from center for better readability */
+  padding: 40px; /* Added padding for better text containment */
+  border: 2px solid #8ecade; /* Added border to match your theme */
 }
 
 #intro-text {
-  font-size: 20px;
-  padding: auto;
+  font-size: 18px; /* Slightly smaller for better fit */
+  line-height: 1.6; /* Better line spacing */
+  margin: 0;
+  max-width: 100%; /* Ensure text doesn't overflow */
 }
 
+/* Add emphasis to key points */
+#intro-text strong {
+  color: #8ecade; /* Use your accent color */
+  font-weight: bold;
+}
 
-/* Styling for the timeline section */
+/* Updated timeline section styling */
 #evolution {
   position: relative;
   width: 80%;
-  margin: 50px auto; /* Added margin-top */
+  margin: 50px auto;
   padding: 20px 0;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0); /* Optional: adds a slight background */
-  border-radius: 8px;
-  padding: 20px;
 }
 
 .timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  padding-left: 50px; /* Space for the vertical line */
+}
+
+/* Create the main vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px; /* Position the line */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #8ecade;
 }
 
 .timeline-item {
   position: relative;
-  width: 100%;
-  margin: 20px 0;
+  margin-bottom: 30px;
+  padding-left: 20px;
 }
 
-.timeline-item:before {
-  content: '';
+/* Create the dots on the timeline */
+.timeline-item::before {
+  content: '*';
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background-color: #8ecade;
-  transform: translateX(-50%);
-  z-index: 1;
+  left: -35px; /* Position the dot on the line */
+  color: #8ecade;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: black; /* Match your background */
+  padding: 0 5px;
 }
 
 .timeline-content {
-  position: relative;
-  background-color: white;
-  border: 2px solid #8ecade;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  color: rgb(255, 255, 255);
 }
 
 .timeline-content h3 {
+  color: #8ecade;
   margin: 0;
-  font-size: 1.4em;
-  color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .timeline-content p {
+  color: white;
+  margin: 5px 0 0 0;
   font-size: 1em;
-  color: #666;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-  text-align: left;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-  text-align: right;
-}
-
-/* Optional: Add dots to indicate the timeline's progress */
-.timeline-item:before {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #8ecade;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
 }
 /* Footer styles */
 .footer {
