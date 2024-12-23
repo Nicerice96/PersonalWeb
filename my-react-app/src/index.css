@@ -383,6 +383,11 @@ body {
   background-color: rgba(142, 202, 222, 0.2);
   color: #8ecade;
 }
+.caution-message {
+  padding: 10px;
+  color: rgb(255, 217, 0);
+  font-size: 8px;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

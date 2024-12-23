@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
-
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 // Import the PDF viewer styles
 import paperPdf from './assets/paper.pdf';
 
-
-
 function Body() {
     const [runningApps, setRunningApps] = React.useState(new Set());
-
 
     const launchJar = (jarName) => {
         console.log(`Attempting to launch JAR: ${jarName}`);
@@ -128,7 +123,9 @@ function Body() {
                             {runningApps.has('amazin') ? 'Running on port 8080' : 'Stopped'}
                         </div>
                     </div>
+                    <span className="caution-message">⚠️ Will not work on Vercel</span>
                 </div>
+
                 <div className="project-card">
                     <p>Uno</p>
                     <div className="project-buttons">
@@ -139,7 +136,9 @@ function Body() {
                             Launch
                         </button>
                     </div>
+                    <span className="caution-message">⚠️ Will not work on Vercel</span>
                 </div>
+
                 <div className="project-card">
                     <p>Active Edge</p>
                     <div className="project-buttons">
@@ -150,6 +149,7 @@ function Body() {
                             Launch
                         </button>
                     </div>
+                    <span className="caution-message">⚠️ Will not work on Vercel</span>
                 </div>
             </div>
 
@@ -175,16 +175,13 @@ function Body() {
             <div id="spotify-playlists" className="playlist-section">
                 <h2>My Spotify Playlists</h2>
                 <div className="playlist-container">
-                <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/5bMZT6DmB5wbmGNdFfJpbI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/5bMZT6DmB5wbmGNdFfJpbI?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
                     <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/4TbJDEiyiOT4ZFOSPc12Sa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
                     <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/2LecmmGpWqRF5sbYLckisu?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
-
-
-
         </div>
     );
 }
