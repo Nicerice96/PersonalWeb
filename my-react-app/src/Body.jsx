@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+
+import { ChevronLeft, ChevronRight } from "lucide-react";
+// Import the PDF viewer styles
+
+
 
 function Body() {
     const [runningApps, setRunningApps] = React.useState(new Set());
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = 117;
+
+    const nextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(prev => prev + 1);
+        }
+    };
+
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(prev => prev - 1);
+        }
+    };
 
     const launchJar = (jarName) => {
         console.log(`Attempting to launch JAR: ${jarName}`);
@@ -59,7 +79,7 @@ function Body() {
         <div className="body-container">
             <div id="intro-box">
                 <p id="intro-text">
-                    Hi, I'm Zarif Khan, a passionate Software Engineering student at Carleton University, graduating in 2025. I have strong expertise in Java, Python, C/C++, and web technologies like HTML, CSS, and JavaScript. I've had hands-on experience working with databases such as PostgreSQL and MongoDB, and I’m proficient in modern software development practices using Spring Boot, RESTful APIs, and cloud deployment on platforms like Azure and Google Cloud.
+                    Hi, I'm Zarif Khan, a passionate Software Engineering student at Carleton University, graduating in 2025. I have strong expertise in Java, Python, C/C++, and web technologies like HTML, CSS, and JavaScript. I've had hands-on experience working with databases such as PostgreSQL and MongoDB, and I'm proficient in modern software development practices using Spring Boot, RESTful APIs, and cloud deployment on platforms like Azure and Google Cloud.
                 </p>
             </div>
             <div id="evolution">
@@ -141,6 +161,52 @@ function Body() {
                         >
                             Launch
                         </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className="capstone-section">
+                <h2>Vision-Based Action Captioning and Classification for Neonatal Resuscitation</h2>
+                
+                <p className="collaboration">
+                    In collaboration with: CHEO and the Ottawa General Hospital
+                </p>
+                
+                <p className="description">
+                    The Capstone project focused on developing an AI system to aid in detecting and captioning various operations performed in neonatal intensive care. Utilizing the LLaVA-NeXT-OneVision model, trained on a curated dataset of 2,000 videos, the system achieved an impressive 87% accuracy. This breakthrough contributes significantly to advancing the field of artificial intelligence in medical environments.
+                </p>
+
+                <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
+                    <div className="relative w-full aspect-[8.5/11] bg-black border-2 border-[#8ecade] mb-4">
+                        <iframe 
+                            src={`./assets/paper.pdf#page=${currentPage}`}
+                            className="w-full h-full"
+                            title={`Page ${currentPage}`}
+                        />
+                        
+                        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4">
+                            <button
+                                onClick={prevPage}
+                                disabled={currentPage === 1}
+                                className={`p-2 rounded-full bg-black border-2 border-[#8ecade] transition-opacity
+                                    ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#8ecade]/10'}`}
+                            >
+                                <ChevronLeft className="w-6 h-6 text-[#8ecade]" />
+                            </button>
+                            
+                            <button
+                                onClick={nextPage}
+                                disabled={currentPage === totalPages}
+                                className={`p-2 rounded-full bg-black border-2 border-[#8ecade] transition-opacity
+                                    ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#8ecade]/10'}`}
+                            >
+                                <ChevronRight className="w-6 h-6 text-[#8ecade]" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="text-white font-mono text-lg">
+                        Page {currentPage} of {totalPages}
                     </div>
                 </div>
             </div>
