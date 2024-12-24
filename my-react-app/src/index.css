@@ -1,5 +1,5 @@
 html, body {
-  min-height: 405vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -95,7 +95,8 @@ html, body {
 /* Ensure the container holds the image and intro-box in position */
 .body-container {
   position: relative;
-  height : 405vh;
+  min-height : 100vh;
+  height: auto;
   background-image: url('./assets/image.png');
   background-position: center;
   background-size: cover;
@@ -139,6 +140,13 @@ html, body {
   color: #8ecade; /* Use your accent color */
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  #intro-box {
+    width: 90%; /* Adjust the width to fit mobile screens */
+    margin: 20px auto; /* Center the box */
+  }
+}
+
 
 /* Updated timeline section styling */
 #evolution {
