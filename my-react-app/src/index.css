@@ -6,7 +6,11 @@ body {
   overflow-x: hidden;
   box-sizing: border-box; /* Add this */
 }
-
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -96,7 +100,7 @@ body {
 /* Ensure the container holds the image and intro-box in position */
 .body-container {
   position: relative;
-  height: 100%; /* Ensure the container takes up full viewport height */
+  height : 100vh;
   background-image: url('./assets/image.png');
   background-position: center;
   background-size: cover;
