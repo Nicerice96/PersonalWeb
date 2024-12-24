@@ -25,7 +25,7 @@ html, body {
   top: 0px; /* Adjust for fixed header height */
   z-index: 10; /* Ensure the subheader stays above other content */
   border-bottom: 4px solid #8ecade;
-  position: sticky;
+  position: fixed;
 }
 
 /* Title styles */
@@ -45,7 +45,7 @@ html, body {
   width: 100%;
   background-color: #000000;
   padding: 10px 20px;
-  position: sticky;
+  position: fixed;
   top: 50px; /* Adjust for fixed header height */
   z-index: 10; /* Ensure the subheader stays above other content */
 }
@@ -96,6 +96,7 @@ html, body {
 /* Ensure the container holds the image and intro-box in position */
 .body-container {
   position: relative;
+  padding-top: 108px;
   min-height : 100vh;
   height: auto;
   background-image: url('./assets/image.png');
