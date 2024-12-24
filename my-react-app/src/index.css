@@ -5,6 +5,7 @@ html, body {
   overflow-x: hidden;
   box-sizing: border-box; 
   font-family: 'Fira Code', monospace;
+  overflow-y: auto;
 }
 * {
   box-sizing: border-box;
@@ -589,7 +590,6 @@ html, body {
   text-decoration: none;
   font-weight: bold;
   text-align: center;
-  border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;
 }
 
