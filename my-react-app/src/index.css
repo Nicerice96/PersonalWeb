@@ -100,7 +100,7 @@ html, body {
 /* Ensure the container holds the image and intro-box in position */
 .body-container {
   position: relative;
-  height : 100vh;
+  height : 415vh;
   background-image: url('./assets/image.png');
   background-position: center;
   background-size: cover;
