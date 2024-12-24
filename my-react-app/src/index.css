@@ -104,13 +104,16 @@ html, body {
   background-image: url('./assets/image.png');
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content vertically */
+  justify-content: center; 
 }
-
+@media (min-width: 768px) {
+  .body-container {
+    background-attachment: fixed;
+  }
 
 #intro-box {
   width: 500px;
