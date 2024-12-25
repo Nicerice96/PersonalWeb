@@ -102,7 +102,7 @@ function Body() {
 
             <div id="github-projects">
                 <div className="project-card">
-                    <p>Amazin.ca</p>
+                    <p className = "card-title">Amazin.ca</p>
                     <div className="project-buttons">
                         {!runningApps.has('amazin') ? (
                             <button 
@@ -137,7 +137,7 @@ function Body() {
                 </div>
 
                 <div className="project-card">
-                    <p>Uno</p>
+                    <p className = "card-title" >Uno</p>
                     <div className="project-buttons">
                         <button 
                             className="project-button launch"
@@ -155,7 +155,7 @@ function Body() {
                 </div>
 
                 <div className="project-card">
-                    <p>Active Edge</p>
+                    <p className = "card-title">Active Edge</p>
                     <div className="project-buttons">
                         <button 
                             className="project-button launch"
