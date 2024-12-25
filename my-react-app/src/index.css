@@ -102,7 +102,7 @@ html, body {
   background-image: url('./assets/image.png');
   background-position: center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +110,7 @@ html, body {
 }
 @media (min-width: 768px) {
   .body-container {
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
 }
 
