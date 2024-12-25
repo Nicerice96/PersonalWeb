@@ -122,8 +122,18 @@ function Body() {
                         <div className={`status-indicator ${runningApps.has('amazin') ? 'running' : ''}`}>
                             {runningApps.has('amazin') ? 'Running on port 8080' : 'Stopped'}
                         </div>
+                        
                     </div>
                     <span className="caution-message">⚠️ Will not work on Vercel</span>
+                    <div className="project-buttons">
+                        <button id="download-amazin">
+                            <a href="./backend/public/amazin.jar" download>Download</a>
+                        </button>
+                        
+                    </div>
+                    
+                    
+                    
                 </div>
 
                 <div className="project-card">
@@ -137,6 +147,11 @@ function Body() {
                         </button>
                     </div>
                     <span className="caution-message">⚠️ Will not work on Vercel</span>
+                    <div className="project-buttons">
+                        <button id="download-uno">
+                            <a href="./backend/public/uno.jar" download>Download</a>
+                        </button>
+                    </div>
                 </div>
 
                 <div className="project-card">
@@ -150,6 +165,13 @@ function Body() {
                         </button>
                     </div>
                     <span className="caution-message">⚠️ Will not work on Vercel</span>
+                    <div className="project-buttons">
+                        <button id="download-active-edge">
+                            <a href="./backend/public/active-edge.jar" download>Download</a>
+                        </button>
+                    </div>
+
+                    
                 </div>
             </div>
 

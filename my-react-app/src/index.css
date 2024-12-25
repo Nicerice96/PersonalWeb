@@ -230,17 +230,19 @@ html, body {
   margin-top: 20px;
 }
 
-.project-button {
+.project-button.launch, 
+.project-button.stop,
+a.project-button {
   padding: 8px 20px;
   border: 2px solid #8ecade;
   background: transparent;
-  color: white;
+  color: white !important;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: 'Fira Code', monospace;
   font-size: 0.9em;
-  position: relative;
-  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .project-button:hover {
@@ -248,13 +250,85 @@ html, body {
   transform: translateY(-2px);
 }
 
-.project-button.launch {
-  border-color: #8ecade;
+
+#download-amazin {
+  padding: 8px 20px;
+  border: 2px solid #3fab71;
+  background: transparent; /* or another color like #000 */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  text-decoration: none;
+  display: inline-block;
 }
+
+#download-amazin:hover {
+  background: rgba(142, 202, 222, 0.1);
+  transform: translateY(-2px);
+}
+
+#download-amazin a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+#download-uno {
+  padding: 8px 20px;
+  border: 2px solid #3fab71;
+  background: transparent; /* or another color like #000 */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#download-uno:hover {
+  background: rgba(142, 202, 222, 0.1);
+  transform: translateY(-2px);
+}
+
+#download-uno a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+#download-active-edge {
+  padding: 8px 20px;
+  border: 2px solid #3fab71;
+  background: transparent; /* or another color like #000 */
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#download-active-edge:hover {
+  background: rgba(142, 202, 222, 0.1);
+  transform: translateY(-2px);
+}
+
+#download-active-edge a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+
+
 
 .project-button.stop {
   border-color: #de8e8e;
-  color: #de8e8e;
+  color: #de8e8e !important;
 }
 
 .project-button.stop:hover {
