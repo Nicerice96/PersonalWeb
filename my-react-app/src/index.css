@@ -158,39 +158,68 @@ html, body {
   padding: 20px 0;
   z-index: 2;
 }
-
 .timeline {
   position: relative;
-  padding-left: 50px; /* Space for the vertical line */
-}
-
-/* Create the main vertical line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px; /* Position the line */
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #8ecade;
+  padding-left: 50px;
 }
 
 .timeline-item {
   position: relative;
   margin-bottom: 30px;
   padding-left: 20px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
 /* Create the dots on the timeline */
 .timeline-item::before {
   content: '*';
   position: absolute;
-  left: -35px; /* Position the dot on the line */
+  left: -35px;
   color: #8ecade;
   font-size: 24px;
   font-weight: bold;
-  background-color: black; /* Match your background */
+  background-color: black;
   padding: 0 5px;
+  z-index: 2;
+}
+
+/* Create segments of the vertical line */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -26px; /* Centered with the dots */
+  top: -30px; /* Start from previous item */
+  width: 2px;
+  height: 0; /* Start with no height */
+  background-color: #8ecade;
+  transition: height 1s ease;
+  z-index: 1;
+}
+
+/* Show full line segment when hovering over timeline item */
+.timeline-item:hover {
+  opacity: 1;
+}
+
+.timeline-item:hover::after {
+  height: 60px; /* Full height to reach next item */
+}
+
+/* Add arrow at the end of each line segment */
+.timeline-item:hover::before {
+  content: '↓';
+  color: #8ecade;
+  animation: bounceArrow 1s infinite;
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 .timeline-content {
@@ -212,6 +241,11 @@ html, body {
   color: rgb(0, 0, 0);
   margin: 5px 0 0 0;
   font-size: 1em;
+}
+
+/* First item specific styling */
+.timeline-item:first-child::after {
+  top: 0;
 }
 /* Github Projects section styling */
 #github-projects {
@@ -377,7 +411,7 @@ a.project-button {
   opacity: 0;
   transition: opacity 0.3s ease;
   position: relative;
-  bottom: 10px; /* Adjust as needed */
+  bottom: 10px; 
 }
 
 .project-card:hover .launch-text {
@@ -402,7 +436,7 @@ a.project-button {
 
 
 .project-card::after {
-  content: 'Click to Launch';
+  content: 'Download or Launch';
   position: absolute;
   bottom: 10px;
   left: 50%;
